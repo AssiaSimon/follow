@@ -94,7 +94,7 @@ int main(void){
 
     ok = check_list_state(l, &node_int_to_string, "2 -> 2 -> 1 -> null" );
     if(ok){
-         displaylist(l, &displayInt);  displaylist(l, &displayInt);  
+         displaylist(l, &displayInt); 
     }else{
         printf("ERREUR TEST 4 : Insertion de NULL acceptée avant entier !\n");
         displaylist(l, &displayInt); 
@@ -103,15 +103,15 @@ int main(void){
     }
 
 
-    /* TEST 4 : insertion ordonnée */
+    /* TEST 5 : insertion ordonnée */
 
     node_ajout = list_orderedAppend(&l, &compare, &k);
 
-    ok = check_list_state(l, &node_int_to_string, "4 -> 2 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "4 -> 2 -> 2 -> 1 -> null" );
     if(ok){
         displaylist(l, &displayInt); 
     }else{
-        printf("ERREUR TEST 4 : Insertion ordonnée de 4 a échoué !\n"); 
+        printf("ERREUR TEST 5 : Insertion ordonnée de 4 a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         exit(-1);
