@@ -156,71 +156,71 @@ int main(void){
     if(ok){
         displaylist(l, &displayInt); 
     }else{
-        printf("ERREUR TEST 6 : Insertion de 0 en queue a échoué !\n"); 
+        printf("ERREUR TEST 7 : Insertion de 0 en queue a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         exit(-1);
     }
 
 
-    /* TEST 7 : refus d'insertion de NULL en queue */
+    /* TEST 8 : refus d'insertion de NULL en queue */
 
     l = list_append(l, NULL); 
 
-    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 1 -> 0 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 2 -> 1 -> 0 -> null" );
     
     if(ok){
-        printf("TEST 7 : Insertion en queue de NULL correctement refusée !\n");
+        printf("TEST 8 : Insertion en queue de NULL correctement refusée !\n");
     }else{
-        printf("ERREUR : Insertion en queue de NULL acceptée !\n"); 
+        printf("ERREUR TEST 8 : Insertion en queue de NULL acceptée !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         exit(-1);
     }
 
 
-    /* TEST 8 : supression de la tête */
+    /* TEST 9 : supression de la tête */
 
     l = list_remove (l, &k); 
 
-    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> 0 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 2 -> 1 -> 0 -> null" );
 
     if(ok){
         displaylist(l, &displayInt); 
     }else{
-        printf("ERREUR TEST 8 : Suppression de tête 4 a échoué !\n"); 
+        printf("ERREUR TEST 9 : Suppression de tête 4 a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         // exit(-1);
     }
 
 
-    /* TEST 9 : supression au milieu */
+    /* TEST 10 : supression au milieu */
 
     l = list_remove (l, &j); 
 
-    ok = check_list_state(l, &node_int_to_string, "3 -> 1 -> 0 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> 0 -> null" );
 
     if(ok){
         displaylist(l, &displayInt); 
-    }else{
-        printf("ERREUR TEST 9 : Suppression de 2 a échoué !\n"); 
+    }else{2
+        printf("ERREUR TEST 10 : Suppression de 2 a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         //exit(-1);
     }
 
 
-    /* TEST 10 : supression en queue */
+    /* TEST 11 : supression en queue */
 
     l = list_remove (l, &o); 
 
-    ok = check_list_state(l, &node_int_to_string, "3 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> null" );
 
     if(ok){
         displaylist(l, &displayInt); 
     }else{
-        printf("ERREUR TEST 10 : Suppression de 0 a échoué !\n"); 
+        printf("ERREUR TEST 11 : Suppression de 0 a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         //exit(-1);
@@ -231,7 +231,7 @@ int main(void){
 
     l = list_remove (l, &k); 
 
-    ok = check_list_state(l, &node_int_to_string, "3 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> null" );
 
     if(ok){
         printf("TEST 11 : Suppression d'un element absent reussi !\n"); 
