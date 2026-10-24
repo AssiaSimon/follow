@@ -120,38 +120,38 @@ int main(void){
 
     node_ajout = list_orderedAppend(&l, &compare, &m);
 
-    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 2 -> 1 -> null" );
     if(ok){
         displaylist(l, &displayInt); 
     }else{
-        printf("ERREUR TEST 4 : Insertion ordonnée de 3 a échoué !\n"); 
+        printf("ERREUR TEST 5 : Insertion ordonnée de 3 a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         exit(-1);
     } 
 
 
-    /* TEST 5 : refus d'insertion ordonnée d'un doublon */
+    /* TEST 6 : refus d'insertion ordonnée d'un doublon */
 
     node_ajout = list_orderedAppend(&l, &compare, &n);
 
-    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 2 -> 1 -> null" );
     
     if(ok){
-        printf("TEST 5 : Insertion du DOUBLON 3 refusée correctement !\n");
+        printf("TEST 6 : Insertion du DOUBLON 3 refusée correctement !\n");
     }else{
-        printf("ERREUR TEST 5 : Insertion de DOUBLON 3 acceptée !\n");
+        printf("ERREUR TEST 6 : Insertion de DOUBLON 3 acceptée !\n");
         displaylist(l, &displayInt); 
         listdestroy(l);
         exit(-1);
     }
 
         
-    /* TEST 6 : insertion en queue */
+    /* TEST 7 : insertion en queue */
 
     l = list_append(l, &o); 
 
-    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 1 -> 0 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "4 -> 3 -> 2 -> 2 -> 1 -> 0 -> null" );
     
     if(ok){
         displaylist(l, &displayInt); 
