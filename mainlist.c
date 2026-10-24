@@ -38,8 +38,10 @@ int main(void){
 
     ok = check_list_state(l, &node_int_to_string, "null" );
     
-    if(!ok){
-        printf("ERREUR TEST 1 : creation d'une liste vide !\n"); 
+    if(ok){
+        displaylist(l, &displayInt); 
+    }else{
+        printf("ERREUR TEST 1 : creation d'une liste vide non réussi !\n"); 
         displaylist(l, &displayInt); 
         exit(-1);
     }
