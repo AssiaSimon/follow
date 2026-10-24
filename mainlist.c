@@ -203,7 +203,7 @@ int main(void){
 
     if(ok){
         displaylist(l, &displayInt); 
-    }else{2
+    }else{
         printf("ERREUR TEST 10 : Suppression de 2 a échoué !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
