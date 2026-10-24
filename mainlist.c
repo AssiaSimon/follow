@@ -234,7 +234,7 @@ int main(void){
     ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> null" );
 
     if(ok){
-        printf("TEST 11 : Suppression d'un element absent reussi !\n"); 
+        printf("TEST 11 : Suppression d'un element absent correctement refusée !\n"); 
     }else{
         printf("ERREUR TEST 11 : Suppression de 4 qui est absent !\n"); 
         displaylist(l, &displayInt); 
@@ -247,12 +247,12 @@ int main(void){
 
     l = list_remove (l, NULL); 
 
-    ok = check_list_state(l, &node_int_to_string, "3 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> null" );
 
     if(ok){
-        printf("TEST 12 : Suppression de 0 a échoué !\n"); 
+        printf("TEST 12 : Suppression de NULL correctement refusée !\n"); 
     }else{
-        printf("ERREUR TEST 13 : Suppression de 4 qui est absent !\n"); 
+        printf("ERREUR TEST 12 : Suppression de 4 qui est absent !\n"); 
         displaylist(l, &displayInt); 
         listdestroy(l);
         //exit(-1);
@@ -261,19 +261,21 @@ int main(void){
 
     /* TEST ETAT FINAL de l */
 
-    ok = check_list_state(l, &node_int_to_string, "3 -> 1 -> null" );
+    ok = check_list_state(l, &node_int_to_string, "3 -> 2 -> 1 -> null" );
 
     if(ok){
         printf("c'est bon\n");
         displaylist(l, &displayInt); 
     }else{
-        printf("ERREUR : Insertion de 0 a échoué !\n"); 
+        printf("ERREUR ETAT pas correcte !\n"); 
         printf("ce n'est pas bon\n");
         displaylist(l, &displayInt); 
         listdestroy(l);
         // exit(-1);
     }
 
+
+    /* TEST 13 : insertion de 0 en queue dans une liste vide */
 
     s_node * vide = list_create();
     vide = list_append(vide, &o); 
@@ -284,7 +286,7 @@ int main(void){
         printf("c'est bon\n");
         displaylist(vide, &displayInt); 
     }else{
-        printf("ERREUR : Insertion de 0 en queue a échoué !\n"); 
+        printf("ERREUR TEST 13 : Insertion de 0 en queue a échoué !\n"); 
         printf("ce n'est pas bon\n");
         displaylist(l, &displayInt); 
         listdestroy(l);
