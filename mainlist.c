@@ -82,7 +82,21 @@ int main(void){
     if(ok){
         printf("TEST 3 : Insertion de NULL refusée correctement !\n"); 
     }else{
-        printf("ERREUR : Insertion de NULL acceptée !\n");
+        printf("ERREUR TEST 3 : Insertion de NULL acceptée !\n");
+        displaylist(l, &displayInt); 
+        listdestroy(l);
+        exit(-1); 
+    }
+
+    /* TEST 4 : insertion entier apres NULL */
+    
+    l = list_insert(l, &j); 
+
+    ok = check_list_state(l, &node_int_to_string, "2 -> 2 -> 1 -> null" );
+    if(ok){
+         displaylist(l, &displayInt);  displaylist(l, &displayInt);  
+    }else{
+        printf("ERREUR TEST 4 : Insertion de NULL acceptée avant entier !\n");
         displaylist(l, &displayInt); 
         listdestroy(l);
         exit(-1); 
