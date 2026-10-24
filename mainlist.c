@@ -283,8 +283,8 @@ int main(void){
     ok = check_list_state(vide, &node_int_to_string, "0 -> null" );
     
     if(ok){
+        displaylist(vide, &displayInt);
         printf("c'est bon\n");
-        displaylist(vide, &displayInt); 
     }else{
         printf("ERREUR TEST 13 : Insertion de 0 en queue a échoué !\n"); 
         printf("ce n'est pas bon\n");
